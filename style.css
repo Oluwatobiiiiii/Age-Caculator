@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(---Offwhite--);
+}
+
+/* REUSABLE STYLES */
+:root {
+    ---White--: hsl(0, 0%, 100%);
+    ---Offwhite--: hsl(0, 0%, 94%);
+    ---Lightgrey--: hsl(0, 0%, 86%);
+    ---Smokeygrey--: hsl(0, 1%, 44%);
+    ---Offblack--: hsl(0, 0%, 8%);
+    ---Purple---: hsl(259, 100%, 65%);
+    ---Light--red: hsl(0, 100%, 67%);
+}
+
+/* APP STYLING */
+#main-app {
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 10%;
+    right: 10%;
+    /* margin-left: 1rem;
+    margin-right: 1rem; */
+}
+
+.age-calc {
+    display: flex;
+    flex-direction: column;
+    /* width: 400px; */
+    max-width: 100%;
+    height: 350px;
+    padding: 1rem;
+    background-color: var(---White--);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 100px;
+}
+
+.age-form {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+#birth-day {
+    width: 100%;
+    height: 40px;
+    border: 1px solid;
+    border-color: var(---Lightgrey--);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: .3rem;
+    font-size: 32px;
+}
+
+
+.day-p {
+    color: var(---Offblack--);
+    font-weight: 300;
+}
+
+#month-day {
+    width: 100%;
+    height: 40px;
+    border: 1px solid;
+    border-color: var(---Lightgrey--);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: .3rem;
+    font-size: 32px;
+}
+
+.month-p {
+    color: var(---Offblack--);
+    font-weight: 300;
+}
+
+
+#year-day {
+    width: 100%;
+    height: 40px;
+    border: 1px solid;
+    border-color: var(---Lightgrey--);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: .3rem;
+    font-size: 32px;
+}
+
+.year-p {
+    color: var(---Offblack--);
+    font-weight: 300;
+}
+
+
+/* AGE-CHECK */
+.age-check {
+    width: 85px;
+    height: 85px;
+    background-color: var(---Purple---);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.age-check:hover {
+    background-color: var(---Offblack--);
+}
+
+.arrow {
+    padding: 1.3rem;
+    cursor: pointer;
+    display: flex;
+}
+
+.ageee {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* AGE OUTPUT */
+.age-output {
+    margin-top: 1rem;
+}
+
+.age-output>h1 {
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.years {
+    font-weight: 800;
+    font-size: 32px;
+    color: var(---Purple---);
+
+}
+
+.months {
+    font-weight: 800;
+    font-size: 32px;
+    color: var(---Purple---);
+
+}
+
+.days {
+    font-weight: 800;
+    font-size: 32px;
+    color: var(---Purple---);
+}
+
+/* MEDIA RESPONSIVITY FOR OTHER SCREENS */
+@media screen and (min-width:1024px) {
+    .age-calc {
+        position: absolute;
+        width: 500px;
+        height: 350px;
+        top: 9%;
+        left: 25%;
+        right: 25%;
+    }
+}
