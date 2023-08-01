@@ -1,70 +1,89 @@
 "use strict";
 
-// DOCUMENT QUERY SELECTOR
-const inputDay = document.querySelector("#birth-day");
-const inputMonth = document.querySelector("#month-day");
-const inputYear = document.querySelector("#year-day");
-const labelYears = document.querySelector(".years");
-const labelMonths = document.querySelector(".months");
-const labelDays = document.querySelector(".days");
-const arrowBtn = document.querySelector(".arrow");
+//selecting the elements
+const outputYear = document.querySelector(".output-year");
+const outputMonth = document.querySelector(".output-month");
+const outputDay = document.querySelector(".output-day");
+const submit = document.querySelector(".submit-btn");
+const inputYear = document.querySelector("#year");
+const inputMonth = document.querySelector("#month");
+const inputDay = document.querySelector("#day");
 
-//cuurent date
-const currentDate = new Date();
-const currentMonth = currentDate.getMonth();
-console.log(currentMonth);
-const currentYear = currentDate.getFullYear();
-const currentDay = currentDate.getDate();
-const myBirthDay = console.log(currentDay);
+let isValid = false;
 
-const calcDays = (date1, date2) => {
-  (Math.round(Math.abs(date2 - date1)) / 1000) * 60 * 60 * 24;
-};
-const daysPassed = calcDays(currentDate);
+//error message
+const errorYear = document.querySelector(".error-year");
+const errorDay = document.querySelector(".error-day");
+const errorMonth = document.querySelector(".error-month");
 
-// CACULATE YEARS
-const myYear = () => {
-  return currentYear - Number(inputYear.value);
-};
+submit.addEventListener("click", calcDate);
 
-//CACULATE MONTH
-const myMonth = () => {
-  return currentMonth - Number(inputMonth.value);
-};
+// let currentDate = new Date();
 
-//CACULATE DAYS
-const myDay = () => {
-  return currentDay - Number(inputDay.value);
-};
+inputDay.addEventListener("input", (e) => {
+  if (+inputDay.value > 31) {
+    errorDay.textContent = "Must be a valid day";
+    isValid = false;
+    return;
+  } else {
+    isValid = true;
+    errorDay.textContent = "";
+  }
 
-//DISPLAY YEARS,MONTH,DAYS
-arrowBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  //SHOW AGE
-  myYear();
-  console.log(myYear());
-  //SHOW MONTH
-  myMonth();
-  console.log(myMonth());
-  //SHOW REMANING DAYS
-  myDay();
-
-  if (
-    inputDay.value === "" &&
-    inputMonth.value === "" &&
-    inputYear.value === ""
-  )
-    console.log("error");
+  if (+inputDay.value === 0) {
+    isValid = false;
+    errorDay.textContent = "This field is required";
+    isValid = false;
+    return;
+  } else {
+    errorDay.textContent = "";
+  }
 });
 
-//EVENT LISTENER
+inputMonth.addEventListener("input", (e) => {
+  if (+inputMonth.value > 12) {
+    errorMonth.textContent = "Must be a valid month";
+    isValid = false;
+    return;
+  } else {
+    isValid = true;
+    errorMonth.textContent = "";
+  }
 
-//FORM VALIDATION
-if (inputDay === "" && inputMonth === "" && inputYear === "")
-  console.log(erroe);
+  if (+inputMonth.value === 0) {
+    isValid = false;
+    errorMonth.textContent = "This field is required";
+    isValid = false;
+    return;
+  } else {
+    errorMonth.textContent = "";
+  }
+});
 
-//IF IT IS IN THE FUTURE RETURN AN ERROR
-
-//1.check if the fiileds are empty
-
-//2.check IF ALL the values enterd are correct
+function calcDate() {
+  if (isValid) {
+    //converting the user input into a birthdate
+    let birthDate = `${inputMonth.value}/${inputDay.value}/${inputYear.value}`;
+    console.log(birthDate);
+    //passing the birthdate and converting it into milliseconds
+    let birthdayOBj = new Date(birthDate);
+    console.log(birthdayOBj);
+    //subtracting the birthdate in milliseconds from the current millisecond
+    let age = Date.now() - birthdayOBj;
+    console.log(age);
+    //changing the millisecond into an actual date
+    let ageDate = new Date(age);
+    console.log(ageDate);
+    //subtracting the actual date
+    let ageYear = ageDate.getUTCFullYear() - 1970; //the 1970 is to get the actual age of the perosn if it is
+    // not there it would show how many years has passed since 1970
+    let ageMonth = ageDate.getUTCMonth();
+    let ageDay = ageDate.getDate() - 1;
+    ///displaying everythin
+    outputDay.textContent = ageDay;
+    outputMonth.textContent = ageMonth;
+    outputYear.textContent = ageYear;
+  } else {
+    alert("error");
+  }
+}

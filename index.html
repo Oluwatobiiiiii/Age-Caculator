@@ -7,48 +7,48 @@
   <title>Age Caculator</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href='images/images/favicon-32x32.png' type="icon">
 </head>
 
 <body>
-  <section id="main-app">
-    <div class="age-calc">
-      <div class="age-form">
-        <div class="form-1">
-          <label for="birth-day">
-            <p class="day-p">DAY</p>
-          </label>
-          <input type="user-birth" name="birth-number" id="birth-day" value="" placeholder="DD">
-        </div>
-        <div class="form-2">
-          <label for="month-day">
-            <p class="month-p">MONTH</p>
-          </label>
-          <input type="user-month" name="month-number" id="month-day" placeholder="MM" value="">
-        </div>
-        <div class="form-3">
-          <label for="year-day">
-            <p class="year-p">YEAR</p>
-          </label>
-          <input type="user-year" name="year-number" id="year-day" placeholder="YYYY" value="">
-        </div>
+  <div class="container">
+    <div class="input-flex">
+      <div class="input-container">
+        <span>Day</span>
+        <input type="number" name="" id="day">
+        <small class="error-day"></small>
       </div>
-
-      <div class="ageee">
-        <div class="age-check">
-          <img src="images/images/icon-arrow.svg" alt="icon-arrow" class="arrow">
-        </div>
+      <div class="input-container">
+        <span>Month</span>
+        <input type="number" name="" id="month">
+        <small class="error-month"></small>
       </div>
-
-
-
-      <div class="age-output">
-        <h1><span class="years">--</span> years</h1>
-        <h1><span class="months">--</span> months</h1>
-        <h1><span class="days">--</span> days</h1>
+      <div class="input-container">
+        <span>Year</span>
+        <input type="number" name="" id="year">
+        <small class="error-year"></small>
       </div>
     </div>
-  </section>
+    <button class="submit-btn">
+      <img src="images/images/icon-arrow.svg" class="arrow" alt="">
+    </button>
+    <div class="output">
+      <h1><span class="output-year">-- </span>Years</h1>
+      <h1><span class="output-month">-- </span>Months</h1>
+      <h1><span class="output-day">-- </span>Days</h1>
+    </div>
+
+    <div class="me">
+      <h3><a href="https://linktr.ee/codingninja" class="coding-ninja">Coding Ninja 🥷🏾</a></h3>
+    </div>
+  </div>
+
 
 
   <script src="app.js"></script>

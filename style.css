@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     border: 0;
@@ -6,6 +8,11 @@
 
 body {
     background-color: var(---Offwhite--);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 /* REUSABLE STYLES */
@@ -19,153 +26,117 @@ body {
     ---Light--red: hsl(0, 100%, 67%);
 }
 
-/* APP STYLING */
-#main-app {
-    position: absolute;
-    top: 20%;
-    bottom: 20%;
-    left: 10%;
-    right: 10%;
-    /* margin-left: 1rem;
-    margin-right: 1rem; */
+.container {
+    background-color: var(---White--);
+    width: 550px;
+    max-width: 80%;
+    padding: 30px;
+    position: relative;
+    border-bottom-right-radius: 150px;
 }
 
-.age-calc {
+input {
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(---Offwhite--);
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid var(---Purple---);
+}
+
+small {
+    color: var(---Light--red);
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.submit-btn {
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    display: flex;
+    background-color: var(---Purple---);
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: 85px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: var(---Offblack--);
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.output span {
+    font-size: 2rem;
+    color: var(---Purple---);
+    font-style: italic;
+    font-weight: 800;
+}
+
+.input-container {
     display: flex;
     flex-direction: column;
-    /* width: 400px; */
-    max-width: 100%;
-    height: 350px;
-    padding: 1rem;
-    background-color: var(---White--);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 100px;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
-.age-form {
+.input-flex {
     display: flex;
-    flex-direction: row;
-    gap: 25px;
+    border-bottom: 2px solid var(---Offwhite--);
+    margin-bottom: 20px;
 }
 
-#birth-day {
-    width: 100%;
-    height: 40px;
-    border: 1px solid;
-    border-color: var(---Lightgrey--);
-    border-radius: 10px;
-    padding: 1rem;
-    margin-top: .3rem;
-    font-size: 32px;
+.me {
+    text-align: center;
 }
 
-
-.day-p {
-    color: var(---Offblack--);
-    font-weight: 300;
-}
-
-#month-day {
-    width: 100%;
-    height: 40px;
-    border: 1px solid;
-    border-color: var(---Lightgrey--);
-    border-radius: 10px;
-    padding: 1rem;
-    margin-top: .3rem;
-    font-size: 32px;
-}
-
-.month-p {
-    color: var(---Offblack--);
-    font-weight: 300;
-}
-
-
-#year-day {
-    width: 100%;
-    height: 40px;
-    border: 1px solid;
-    border-color: var(---Lightgrey--);
-    border-radius: 10px;
-    padding: 1rem;
-    margin-top: .3rem;
-    font-size: 32px;
-}
-
-.year-p {
-    color: var(---Offblack--);
-    font-weight: 300;
-}
-
-
-/* AGE-CHECK */
-.age-check {
-    width: 85px;
-    height: 85px;
-    background-color: var(---Purple---);
-    border-radius: 50px;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-.age-check:hover {
-    background-color: var(---Offblack--);
-}
-
-.arrow {
-    padding: 1.3rem;
-    cursor: pointer;
-    display: flex;
-}
-
-.ageee {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-/* AGE OUTPUT */
-.age-output {
-    margin-top: 1rem;
-}
-
-.age-output>h1 {
-    font-weight: 800;
-    font-size: 32px;
-}
-
-.years {
-    font-weight: 800;
-    font-size: 32px;
-    color: var(---Purple---);
-
-}
-
-.months {
-    font-weight: 800;
-    font-size: 32px;
-    color: var(---Purple---);
-
-}
-
-.days {
-    font-weight: 800;
-    font-size: 32px;
+.coding-ninja {
+    text-decoration: none;
     color: var(---Purple---);
 }
 
-/* MEDIA RESPONSIVITY FOR OTHER SCREENS */
-@media screen and (min-width:1024px) {
-    .age-calc {
-        position: absolute;
-        width: 500px;
-        height: 350px;
-        top: 9%;
-        left: 25%;
-        right: 25%;
+@media screen and (max-width: 768px) {
+    .container {
+        height: 400px;
     }
+
+    input {
+        width: 80%;
+    }
+
+    .input-flex {
+        margin-bottom: 2rem;
+    }
+
+    .submit-btn {
+        width: 40px;
+        height: 40px;
+        right: 50%;
+        top: 95px;
+    }
+
+    .arrow {
+        transform: scale(0.5);
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+
 }
