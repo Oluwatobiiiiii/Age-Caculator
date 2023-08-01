@@ -36,12 +36,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](/Screenshot%202023-08-02%20at%2000.30.23.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here]
-- Live Site URL: [Add live site URL here]
+- Solution URL: [https://www.frontendmentor.io/solutions/age-caculator-haA0eegIs0]
+- Live Site URL: [https://age-caculator-rho.vercel.app/]
 
 ### Built with
 
@@ -85,10 +85,6 @@ function calcDate() {
   }
 }
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ## Author
 
