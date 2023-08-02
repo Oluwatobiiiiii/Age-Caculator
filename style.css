@@ -76,14 +76,13 @@ small {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 800;
+    font-style: italic;
 }
 
 .output span {
-    font-size: 2rem;
     color: var(---Purple---);
-    font-style: italic;
     font-weight: 800;
 }
 
